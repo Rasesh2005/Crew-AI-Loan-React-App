@@ -10,14 +10,22 @@ The `frontend` folder contains a React application. To run the application, navi
 cd frontend
 npm install
 npm start
+cd ..
+
 ```
 
 The application will start on `http://localhost:3000`.
 
 ### Backend
-The `backend` folder contains a Python application. To run the application, navigate to the `backend` directory and run the following command:
+The `backend` folder contains a Python application. To run the application, navigate to the `backend` directory and run the following command(Make Sure to get an OPENAI API key beforehand):
 
 ```bash
+touch .env
+echo "OPENAI_API_KEY=\"YOUR_API_KEY_HERE\"" >> .env
+echo "OPENAI_MODEL_NAME=gpt-4-turbo" >> .env
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
 python3 main.py
 ```
 
