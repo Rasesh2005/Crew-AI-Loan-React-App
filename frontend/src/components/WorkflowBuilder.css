@@ -1,0 +1,67 @@
+/* Overall Wrapper to make Sidebar and ReactFlow in one column */
+.workflow-builder-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+}
+
+/* Container for the Sidebar and Workflow */
+.workflow-builder-content {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; /* Make it take up available height */
+    width: 100%;
+}
+
+/* Workflow Dropzone Styling */
+.workflow-dropzone {
+    flex: 1;
+    background-color: #f4f6f9;
+    border-left: 1px solid #ddd;
+    position: relative;
+    padding: 10px;
+}
+
+/* Change background when dragging */
+.workflow-dropzone.dragging {
+    background-color: #eef2f7;
+}
+
+/* Button at the bottom */
+.save-button-container {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fff; /* Separate button area visually */
+    border-top: 1px solid #ddd;
+}
+
+/* Save button styling */
+.save-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make it span the full row */
+    max-width: 300px; /* Limit max width */
+}
+
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .workflow-builder-content {
+        flex-direction: column;
+    }
+
+    .save-button {
+        width: 90%;
+    }
+}

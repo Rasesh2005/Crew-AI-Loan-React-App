@@ -1,0 +1,95 @@
+.file-upload-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+    position: relative;
+}
+
+/* Dropzone styling */
+.dropzone {
+    margin: 20px 0;
+    padding: 40px;
+    border: 2px dashed #007bff;
+    background-color: #e9f7fd;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    font-size: 16px;
+    color: #333;
+}
+
+.dropzone.dragging {
+    background-color: #cce4f6;
+    border-color: #0056b3;
+}
+
+/* Hover effect on dropzone */
+.dropzone:hover {
+    background-color: #f0f9ff;
+    border-color: #0056b3;
+}
+
+/* Text inside the dropzone */
+.dropzone p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Button styling */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    background-color: #004494;
+    transform: translateY(1px);
+}
+
+/* Back to Workflow button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.back-button:active {
+    background-color: #004494;
+    transform: translateY(1px);
+}

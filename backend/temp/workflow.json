@@ -1,0 +1,50 @@
+{
+  "nodes": [
+    {
+      "id": "2ff62b14-22dc-4e4d-9b35-e9ada1a4a8ac",
+      "type": "dataExtraction",
+      "position": {
+        "x": 70,
+        "y": 137
+      },
+      "data": {
+        "label": "dataExtraction Node"
+      },
+      "selected": false,
+      "measured": {
+        "width": 253,
+        "height": 95
+      }
+    },
+    {
+      "id": "3d25a4ae-ad57-499b-8929-d06a1b9e3d8a",
+      "type": "dataCorrelation",
+      "position": {
+        "x": 727,
+        "y": 155
+      },
+      "data": {
+        "label": "dataCorrelation Node"
+      },
+      "selected": false,
+      "measured": {
+        "width": 277,
+        "height": 95
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "2ff62b14-22dc-4e4d-9b35-e9ada1a4a8ac",
+      "target": "3d25a4ae-ad57-499b-8929-d06a1b9e3d8a",
+      "markerEnd": {
+        "type": "arrowclosed"
+      },
+      "style": {
+        "stroke": "#333",
+        "strokeWidth": 2
+      },
+      "id": "xy-edge__2ff62b14-22dc-4e4d-9b35-e9ada1a4a8ac-3d25a4ae-ad57-499b-8929-d06a1b9e3d8a"
+    }
+  ]
+}

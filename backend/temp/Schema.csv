@@ -1,0 +1,37 @@
+Table Name,Column Name,Column Description,Column Type
+Customers,customer_id,Unique identifier for each customer,INT
+Customers,first_name,First name of the customer,VARCHAR(100)
+Customers,last_name,Last name of the customer,VARCHAR(100)
+Customers,dob,Date of birth of the customer,DATE
+Customers,email,Email address of the customer,VARCHAR(255)
+Customers,phone,Contact phone number of the customer,VARCHAR(15)
+Customers,address,Residential address of the customer,VARCHAR(255)
+Customers,employment_status,Employment status of the customer,VARCHAR(50)
+Customers,credit_score,Credit score of the customer,INT
+Loans,loan_id,Unique identifier for each loan,INT
+Loans,customer_id,Links to the customer id who took the loan,INT
+Loans,loan_amount,Total amount of the loan,"DECIMAL(15,2)"
+Loans,loan_type,"Type of the loan (e.g. mortgage, refinance)",VARCHAR(50)
+Loans,interest_rate,Interest rate of the loan,"DECIMAL(5,2)"
+Loans,loan_term_years,Loan term in years,INT
+Loans,start_date,Date when the loan originated,DATE
+Loans,end_date,Expected end date of the loan,DATE
+Loans,monthly_payment,Calculated monthly payment,"DECIMAL(10,2)"
+Loans,outstanding_balance,Current outstanding loan balance,"DECIMAL(15,2)"
+Loans,loan_status,"Status of the loan (e.g. active, closed, delinquent)",VARCHAR(20)
+Property,property_id,Unique identifier for the property,INT
+Property,loan_id,Links to the loan for the property,INT
+Property,property_type,"Type of the property (e.g. residential, commercial)",VARCHAR(50)
+Property,address,Street Address of the property,VARCHAR(255)
+Property,city,City where the property is located,VARCHAR(100)
+Property,state,State where the property is located,VARCHAR(50)
+Property,zip_code,Zip code of the property,VARCHAR(10)
+Property,market_value,Current market value of the property,"DECIMAL(15,2)"
+Property,purchase_price,Original purchase price of the property,"DECIMAL(15,2)"
+Property,valuation_date,Date of the most recent property valuation,DATE
+Payments,payment_id,Unique identifier for each payment,INT
+Payments,loan_id,Links to the mortgage loan,INT
+Payments,payment_date,Date when the payment was made,DATE
+Payments,due_date,Scheduled due date for the payment,DATE
+Payments,payment_amount,Amount of the payment,"DECIMAL(10,2)"
+Payments,payment_status,"Status of the payment (e.g. paid, late, missed)",VARCHAR(20)

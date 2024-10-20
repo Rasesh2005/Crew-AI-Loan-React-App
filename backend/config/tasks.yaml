@@ -1,0 +1,73 @@
+management_task: 
+  description: >
+    Look into the graph data of nodes and directed edges in the json file, figrue out the order of agents to perform action on and  pass it to main manager
+
+    Graph data file path: {json_path}
+
+  expected_output: >
+    for each agetn you delegate the task to output something like:
+      "Performing <Agent name> Task..."
+
+data_migration_task:
+  description: >
+    Extract and store key information from Data file in memory, identify relevant data columns (e.g., OrigUPB, PropertyType), and ensure the data is ready for further analysis or correlation.
+
+
+    Data file path: {data_file_path}
+    
+    Schema file path: {schema_file_path}
+
+  expected_output: >
+    Loaded <File Name You Read>
+
+data_correlation_task:
+  description: >
+    Compare extracted Columns in Data CSV file(ONLY READ FIRST LINE OF THE CSV FILE, which is the columns of CSV) against the database schema(READ THE ENTIRE SCHEMA CSV FILE) given in Schema CSV File, report any unmatched fields, and store the correlated data in a structure suitable for transformation or migration in memory.
+    Show all Values in Output, Do not show partial Results, for the entire schema file.
+    The Field column in output should contain every field from every table in Schema CSV file
+
+    Data CSV file path: {data_file_path}
+    
+    Schema CSV file path: {schema_file_path}
+
+  expected_output: >
+    Output Markdown Table with the following format:
+    The Field column should contain every field from every table in Schema CSV file
+    | Schema TableName | Schema Column | Data Column  | Datatype |
+    | --- | --- | --- | --- |
+    | Customer | Field1 | DataField1  | Datatype1 |
+    | Property | Field2 | DataField2  | Datatype2 |
+
+
+data_analysis_task:
+  description: >
+    Detect and log data anomalies, suggest possible corrections, and ensure that first 10 data quality issues are flagged and fixed for a smooth migration.
+    Show first 10  data quality issues in output.
+
+    Data file path: {data_file_path}
+
+  expected_output: >
+    Output table as follows:
+    | Row | Column | Anamoly type | Suggested Changes |
+    | --- | --- | --- | --- |
+    | <Row Number>  | <Column Name> | Outlier | Correct to 10(Example) |
+    | <Row Number>   | <Column Name> | Missing | Replace with mean |
+
+
+data_preparation_task:
+  description: >
+    Generate SQL Commands to insert the Data file data into the Database with Schema given in Schema file in appropriate places as instructed by data_correlator.
+    Show all Values in Output, Do not show partial Results.Give atleast 10 lines if you cant give complete code
+
+    Data file path: {data_file_path}
+
+    Schema file path: {schema_file_path}
+
+  expected_output: >
+    Code Block of SQL Code to insert the given  data into the database. 
+    ```
+    SQL CODE HERE
+    ```
+
+    
+
